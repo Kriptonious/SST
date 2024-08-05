@@ -1,0 +1,183 @@
+ <!DOCTYPE html>
+<html>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <style> 
+    body {
+      background-color: black;
+    }
+    .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 104px;
+  }
+    .background-box {
+      background-color: white;
+      padding: 150px;
+      width: 72%;
+      color: red;
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+       
+    }
+    .nav {
+      z-index: -1;
+    }
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      width: 100%;
+    }
+
+    .openbtn:hover {
+      background-color: #444;
+    }
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+    
+    </style>
+<body>
+
+<!-- Navigation -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="https://indian-mathematician.sswanik.repl.co/ancient.html">Ancient Indian Mathametician</a>
+    <a href="https://indian-mathematician.sswanik.repl.co/medivial.html">Medievial Indian Mathametician</a>
+    <a href="https://indian-mathematician.sswanik.repl.co/modern.html">Modern Indian Mathametician</a>
+    <a href="https://indian-mathematician.sswanik.repl.co/quiz.html">Quiz</a>
+  </div>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ </button>  
+  </div>
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+  </script>
+
+
+<!-- Slide Show -->
+  <div>
+    
+<section>
+  <img class="mySlides" src="R (1).jpeg"
+    style="width:100%">
+   <!--<div class="background-box">
+   <div class="text"><b>Indian Mathematician</b></div></div> -->
+    
+  <img class="mySlides" src="R.jpeg"
+  style="width:100%">
+  <img class="mySlides" src="wp4022777.jpg"
+  style="width:100%">
+</section>
+  </div>
+<!-- Band Description -->
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+  <br>
+  <h1 class="w3-wide" style="color:white;">Indian Mathematician</h2>
+  <p class="w3-justify" style="color:white;">Indian mathematicians have made significant contributions to the field of mathematics throughout history. From ancient times to the present day, Indian mathematicians have explored various branches of mathematics such as algebra, trigonometry, and calculus. They have developed innovative concepts, solved complex problems, and laid the foundation for many modern mathematical principles. Their advancements in mathematics have not only influenced the field itself but also had a profound impact on other areas such as astronomy and physics. Indian mathematicians continue to inspire and contribute to the ever-evolving world of mathematics.</p>
+  <p><font color=white>© 2023 MineHive. | All Rights Reserved</p>
+</section>
+
+<!-- Band Members -->
+
+<!-- Footer 
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+ 
+  <p class="w3-medium">
+  Powered by <a href="#" target="_blank">MineHive</a>
+  </p>
+</footer>-->
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>
